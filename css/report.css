@@ -1,25 +1,4 @@
 @font-face {
-    font-family: 'Cafe24Surround';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Aggravo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'KakaoBigFont3';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-Regular.woff2') format('woff2');
     font-weight: 400;
@@ -38,14 +17,22 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-ExtraBold.woff2') format('woff2');
     font-weight: 800;
     font-display: swap;
-}
-
-/* 폰트 불러오기 */
+} /* 폰트 불러오기 */
 
 .span_pm {
     /* 글꼴 'pm'만 강조 색 주기 */
     color: rgb(33, 79, 0);
     font-family: 'KakaoBigFont1';
+}
+
+
+#report_title { /* 신고 접수 페이지 제목 박스 */
+    padding-top: 30px;
+    font-family: 'KakaoBigFont2';
+    font-size: 25px;
+    text-align: center;
+
+    margin-bottom: 20px;
 }
 
 .form_notice {
@@ -54,21 +41,15 @@
     font-size: 15px;
 }
 
-#report_title {
-    padding-top: 30px;
-    font-family: 'KakaoBigFont2';
-    font-size: 25px;
-    text-align: center;
-}
-
-#report_group {
+#report_group { /* 신고 접수 폼, 포돌, 포순 */
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-evenly; /* 각각 div로 이루어진 사진과 폼들의 일정한 간격 배치 */
 
     padding-bottom: 40px;
 }
 
+/* 신고 접수 메인 폼 */
 #report_form {
     border: 2px rgb(61, 154, 120) solid;
     border-radius: 15px;
@@ -78,35 +59,36 @@
     width: 47vw;
 }
 
+/* 각 신고 속성에 따른 박스 (fieldset) */
 .report_form_group {
     padding: 10px;
 
     line-height: 40px;
 }
 
-legend {
+/* 각 속성에 따른 제목 글꼴 설정 */
+.report_form_title {
     color: rgb(0, 0, 0);
     font-weight: 700;
     font-size: large;
 }
 
-
 .podoli img {
     width: 300px;
     height: 400px;
 }
-
+/* 두 사진(포돌, 포순)이 서로 사진의 크기가 다르기 때문에 따로 설정 */
 .posuni img {
     width: 290px;
     height: 435px;
 }
 
 /* 일반 텍스트 입력창 공통 스타일 */
-#report_form input[type="email"],
-#report_form input[type="tel"],
-#report_form input[type="text"],
-#report_form select,
-#report_form textarea {
+#report_form input[type="email"], /* 이메일 인풋 */
+#report_form input[type="tel"], /* 전화번호 인풋 */
+#report_form input[type="text"], /* 텍스트 인풋 */
+#report_form select, /* 마크다운 인풋 */
+#report_form textarea /* 텍스트라이라 인풋 */{
     width: 100%;
     padding: 12px 14px;
 
@@ -120,6 +102,7 @@ legend {
     margin-bottom: 8px; /* 요소 간 간격 추가 */
 }
 
+/* 버튼 위로 마우스 올릴 시 실행할 기본 설정값 */
 #report_form input:hover,
 #report_form select:hover,
 #report_form textarea:hover {
@@ -130,31 +113,19 @@ legend {
 #report_form button {
     border: none;
     border-radius: 10px;
-    
 }
 
+/* radio 세로로 배치 되게끔 설정 */
 .radio_buttons {
     display: flex;
     flex-direction: column;
 
 }
 
+/* radio 인풋 글꼴 설정 */
 #radio_group label {
     font-weight: 600;
 }
-
-.report_file_group {
-    display: flex;
-    flex-direction: column;
-    background-color: #bed5d7;
-
-    padding: 10px;
-    margin: 0px 30px;
-
-    border-radius: 16px;
-    padding: 0;
-}
-
 
 .hidden_file {
     /* 파일 선택 버튼 인터페이스 숨기기(디자인) */
@@ -182,18 +153,21 @@ legend {
     border-radius: 10px;
 }
 
+/* 사진 업로드 인풋에 뜰 텍스트 */
 .upload_text {
     color: #666666;
     font-size: 14px;
     margin-top: 8px;
 }
 
+/* 파일 인풋 밑의 주의 문구 */
 .file_tip {
     color: red; /* 붉은 계열로써 주의 문구의 가시성을 독보이게 함 */
     font-size: 12px;
     line-height: 17px;
 }
 
+/* 가상의 지도를 보여주는 '약도 보기' 버튼 설정 */
 #map_bt {
     background-color: #778491;
     color: white;
@@ -203,14 +177,16 @@ legend {
     padding: 8px 16px;
 }
 
+/* '약도 보기' 버튼 위에 마우스를 올릴 시 */
 #map_bt:hover {
     background-color: #6c757d;
 }
 
 #report_content {
-    resize: none;
+    resize: none; /* 텍스트 아리아 사이즈 고정 */
 }
 
+/* 제출 버튼 */
 .bt_submit {
     width: 100%;
 
@@ -222,6 +198,7 @@ legend {
     padding: 16px;
 }
 
+/* 제출 버튼위에 마우스를 올릴 시 실행 */
 .bt_submit:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 15px rgba(42, 157, 143, 0.45);

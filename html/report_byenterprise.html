@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/report.css">
     <link rel="stylesheet" href="/css/report_byenterprise.css">
-    <link rel='icon' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     
 </head>
 <body>
-    <header id="header_main">
-        <h1><a href="../html/main.html"><img src="../images/kickoff.png" alt="logo"></h1><!--로고부분-->
+    <header>
+        <h1><a href="../html/main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분ㅗ-->
             <ul>
                 <li> 웹페이지 소개  
@@ -45,26 +45,28 @@
                 <li> 우리 동네 현황
                     <ul class="submenu">
                         <li><a href="#">자유게시판</a></li>
-                        <li><a href="#">업체별 신고 접수 현황</a></li>
+                        <li><a href="/html/report_byenterprise.html">업체별 신고 접수 현황</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
         <div id="site_map">
-          <a href="#">사이트맵</a>
+            <a href="#">사이트맵</a>
         </div>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-          <a id='red' href="#">신고</a>
-          <a href="#">로그인 / 회원가입</a>
-          <div class="h_box" id="h_box4">
-          <form>
-              <input type="search" id="sear">
-              <i class="fi fi-rr-search"></i>
-          </form>
+            <a id='red' href="/html/report.html">신고</a>
+            <a href="#">로그인 / 회원가입</a>
+            <div class="h_box" id="h_box4">
+                <form>
+                    <input type="search" id="sear">
+                    <i class="fi fi-rr-search"></i>
+                </form>
+            </div>
         </div>
     </header>
     <main>
         <!-- 업체별 신고 접수 현황 헤드라인 섹션 -->
+        <!-- 설명글 추가하는 선택지를 위한 유연성 있는 선택자 설정 -->
         <section class="report_sec" id="report_headline_container">
 
             <div id="report_head">
@@ -207,9 +209,13 @@
     <footer>
         <div id="footer_info">
             <p>
-                <h1><img src="../images/kickoff.png" alt="logo"></h1>
+                <h1><i class="fi fi-rr-electric-scooter"></i><img src="../images/kickoff.png" alt="logo"></h1>
                 <div id="pcy">
-                    <span class="policy"> <a id="blue">개인정보 처리방침</a> | <a>저작권 보호정책</a> | <a>이용약관</a> | <a>이메일주소무단수집거부</a></span>
+                    <span class="policy">
+                    <ul>
+                        <li><a id="blue">개인정보 처리방침</a></li> | <li><a>저작권 보호정책</a></li> | <li><a>이용약관</a></li> | <li><a>이메일주소무단수집거부</a></li>
+                    </ul>
+                    </span>
                 </div><br>
                 <div>(43010) 대구광역시 달성군 구지면 창리로 11길 93</div><br>
                 <div>Tel : 고객센터 : 053)486-8282 기획자 : 053)045-0920 개발자 : 053)123-1234<br>

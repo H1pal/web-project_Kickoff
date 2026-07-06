@@ -10,8 +10,8 @@
     
 </head>
 <body>
-    <header id="header_main">
-        <h1><a href="../html/main.html"><img src="../images/kickoff.png" alt="logo"></h1><!--로고부분-->
+    <header>
+        <h1><a href="../html/main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분ㅗ-->
             <ul>
                 <li> 웹페이지 소개  
@@ -43,7 +43,7 @@
                 <li> 우리 동네 현황
                     <ul class="submenu">
                         <li><a href="#">자유게시판</a></li>
-                        <li><a href="#">업체별 신고 접수 현황</a></li>
+                        <li><a href="/html/report_byenterprise.html">업체별 신고 접수 현황</a></li>
                     </ul>
                 </li>
             </ul>
@@ -52,49 +52,65 @@
             <a href="#">사이트맵</a>
         </div>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-                <a id='red' href="#">신고</a>
-                <a href="#">로그인 / 회원가입</a>
-                <div class="h_box" id="h_box4">
+            <a id='red' href="/html/report.html">신고</a>
+            <a href="#">로그인 / 회원가입</a>
+            <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
                     <i class="fi fi-rr-search"></i>
                 </form>
+            </div>
         </div>
     </header>
     <main>
         <section id="main_img">
-            <div class="overlay">        
-                <h1 class="main-title">
+            <div id="overlay">        
+                <h1 id="main-title">
                     안전한 보행길,<br>
                     깨끗한 우리 동네.
                 </h1>
-                <p class="main-desc">
+                <p id="main-desc">
                     올바른 PM 문화, 우리가 함께 만듭니다.
                 </p>
-                <div class="btn-group">
-                    <a href="#" id="green">지금 제보하기</a>
+                <div id="btn-group">
+                    <a href="../html/report.html" id="green">지금 제보하기</a>
                     <a href="#" id="white">이용 안내</a>
                 </div>
             </div>
         </section>
         <section id="main_info">
             <div class="dv" id="scooter">
-                <div class="image" id="electric"></div>
+                <div class="image"><img src="../images/kickboard.jpg" alt="kickboard"></div>
+                <div>
+                    <p>위에 보이는 전동 스쿠터는<br>미성년자들이 주로 타며,<br> 보통 면허 없이, 헬멧 없이<br> 타는 경우가 대다수이며,<br> 이 킥보드로 인한 사고가 많아<br> <span>'킥라니'</span>라고도 불립니다.</p>
+                </div>
             </div>
             <div class="dv" id="info">
-
+                <div>
+                    <p>최근 미성년자들의 무면허·헬멧 <span>전동 킥보드</span><br> 주행이 급증하면서, 도로 위의 시한폭탄이라<br> 불리는 '<span>킥라니</span>' 관련 사고가 심각한 사회적 문제로 떠오르고 있습니다.<br><br><br>
+                    하지만 더 큰 문제는 이 위험이 <span>'불법 주차'</span>와 만날 때 발생합니다. 도로변에 빽빽하게 늘어선 불법 주차 차량들은 운전자의 시야를 완전히 가리는 거대한 사각지대를 만듭니다. 이 불법 주차 차량 사이에서 갑자기 튀어나오는 사람이나 전동 킥보드는 운전자가 미처 대처할 수 없어 <span>대형 충돌 사고</span>로 이어지는 가장 치명적인 원인이 되고 있습니다. <br><br><br>
+                    본 웹페이지는 이처럼 우리 일상을 위협하는 <br>[<span>위험천만한 킥보드 주행</span>]과 <br>[<span>시야를 가리는 불법 주차</span>]라는 두 가지 핵심 문제를 널리 알리고, 더 이상의 비극적인 사고를 막기 <br>위한 '안전사고 예방' 차원에서 제작되었습니다.</p>
+                </div>
             </div>
             <div class="dv" id="car">
-                <div class="image" id="parking"></div>
+                <div class="image"><img src="../images/parking.jpg" alt="parking"></div>
+                <div>
+                    <p>최근에 불법주차 때문에 사고가 나는 경우가 많아졌습니다. 특히 불법주차 사이에서 나오는 사람이나 킥보드 같은 경우에 오는 차량들은 볼 수 없어 사고가 제일 많이 납니다. 이 때문에 전동 킥보드 사고도 더 많아지고 있습니다.</p>
+                </div>
             </div>
+
         </section>
     </main>
     <footer>
         <div id="footer_info">
             <p>
-                <h1><img src="../images/kickoff.png" alt="logo"></h1>
+                <h1><i class="fi fi-rr-electric-scooter"></i><img src="../images/kickoff.png" alt="logo"></h1>
                 <div id="pcy">
-                    <span class="policy"> <a id="blue">개인정보 처리방침</a> | <a>저작권 보호정책</a> | <a>이용약관</a> | <a>이메일주소무단수집거부</a></span>
+                    <span class="policy">
+                    <ul>
+                        <li><a id="blue">개인정보 처리방침</a></li> | <li><a>저작권 보호정책</a></li> | <li><a>이용약관</a></li> | <li><a>이메일주소무단수집거부</a></li>
+                    </ul>
+                    </span>
                 </div><br>
                 <div>(43010) 대구광역시 달성군 구지면 창리로 11길 93</div><br>
                 <div>Tel : 고객센터 : 053)486-8282 기획자 : 053)045-0920 개발자 : 053)123-1234<br>

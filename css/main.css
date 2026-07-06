@@ -1,64 +1,59 @@
-@font-face {
-    font-family: 'Cafe24Surround';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
-}
-
-@font-face {
+@font-face { /*폰트 1*/
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
     font-weight: 400;
     font-display: swap;
 }
-
-@font-face {
+@font-face { /*폰트 2*/
     font-family: 'Aggravo';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
     font-weight: 300;
     font-display: swap;
 }
 
-* {
+@font-face { /*폰트 2*/
+    font-family: 'KakaoBigFont1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+*{ /*전체에 마진과 패딩값 없애기 보더박스를 넣어서 width와 height값을 정해진값으로 만든다.*/
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-header img{
+/*header부분*/
+
+header img{ /*로고 이미지 넣기*/
     width: 200px;
     height: 65px;
 }
-
-li {
-    list-style: none;
-    /*ul, ol 앞에있는 점이나 숫자를 없앤다.*/
+li{ /*ul, ol 앞에있는 점이나 숫자를 없앤다.*/
+    list-style: none; 
 }
-
-header a {
-    text-decoration: none;
-    /*밑줄 없애기*/
-    color: black;
-    /*글 색상*/
-    display: block;
+header a{ 
+    text-decoration: none; /*밑줄 없애기*/
+    color: black; /*글 색상*/
+    display: block; 
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-    /*밑줄 없애기*/
-    color: black;
-    /*글 색상*/
-    display: block;
+header a i{ /*파비콘 사이즈*/
+    font-size: 60px;
 }
 
-header {
+a{
+    text-decoration: none; /*밑줄 없애기*/
+    color: black; /*글 색상*/
+    display: block;
+}
+header { /*스크롤 내려도 헤더가 보이게*/
     display: flex;
-    justify-content: space-evenly;
-    /*로고는 왼쪽 끝 메뉴는 중간 버튼은 오른쪽 끝으로 만든다*/
-    align-items: center;
-    /*높이가 다 다른 로고와 글자들이 알아서 위아래 정중앙으로 맞춰준다*/
-    position: fixed;
+    justify-content: space-evenly; /*로고는 왼쪽 메뉴는 중간 버튼은 오른쪽으로 만든다*/
+    align-items: center; /*높이가 다 다른 로고와 글자들이 알아서 위아래 정중앙으로 맞춰준다*/
+    position: fixed; /*화면을 스크롤해도 항상 같은 자리에 고정한다.*/
     top: 0;
     left: 0;
     width: 100%;
@@ -78,30 +73,24 @@ nav>ul>li {
     line-height: 80px;
 }
 
-nav>ul {
-    list-style: none;
-    justify-content: center;
-}
-
-nav ul li {
-    font-family: 'Cafe24Surround';
-    display: inline-block;
+nav ul li{ /*메인 메뉴 부분 */
+    font-family: 'KakaoBigFont1';
+    display: inline-block; 
     font-weight: 600;
     text-align: center;
     line-height: 80px;
 }
 
-nav>ul>li:hover {
+nav>ul>li:hover { /*li부분을 눌렀을 때 색이 바뀐다.*/
     color: #2A9D8F;
 }
 
-nav>ul>li:hover .submenu {
+nav>ul>li:hover .submenu{ /*li부분을 눌렀을 때 서브메뉴가 나온다.*/
     display: flex;
-
 }
 
-.submenu {
-    /*서브메뉴*/
+/*서브메뉴 부분*/
+.submenu{  /*내려왔을 때 나오는 서브메뉴*/
     position: absolute;
     z-index: 1;
     background-color: white;
@@ -114,23 +103,21 @@ nav>ul>li:hover .submenu {
     left: 50%;
     padding: 0;
     margin: 0;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /*서브메뉴 박스의 가로 길이의 절반(50%)만큼 왼쪽으로 가게 한다.*/
     border-radius: 30px;
 }
 
-.submenu li {
+.submenu li {  /*li부분 가로 세로와 글꼴넣기*/
     width: 200px;
     height: 50px;
     line-height: 50px;
     font-size: 18px;
-    font-family: 'Cafe24Surround';
+    font-family: 'KakaoBigFont1';
 }
-
-#sear {
+#sear{ /*검색부분 만들기*/
     border-radius: 30px;
 }
-
-#site_map {
+#site_map{ /*사이트맵 만들기*/
     font-family: 'Aggravo';
     width: 70px;
     height: 30px;
@@ -141,17 +128,14 @@ nav>ul>li:hover .submenu {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(42, 157, 143, 0.35);
 }
-
-#site_map:hover {
-    transform: translateY(-2px);
+#site_map:hover { /*사이트맵 위에 마우스 올리면 올라가게 만든다.*/
+    transform: translateY(-2px); /*원래 위치보다 위로 올라간다.*/
     box-shadow: 0 12px 24px rgba(42, 157, 143, 0.45);
 }
-
-#bt a:hover {
+#bt a:hover{ /*신고, 로그인 회원가입 버튼 위에 마우스를 가져다 대면 색이 바뀌게 한다.*/ 
     color: #2A9D8F !important;
 }
-
-#red {
+#red{ /*신고 버튼 강조하기*/
     font-family: 'Aggravo';
     color: red;
     font-weight: bold;
@@ -159,13 +143,16 @@ nav>ul>li:hover .submenu {
 
 }
 
-main {
+/*main 부분*/
+
+main { /*메인 부분 위에 마진값 넣어 헤더부분 띄우고 배경색 바꾸기(fixed 때문)*/
     margin-top: 80px;
     background-color: #FFFFFF;
 }
 
-#main_img {
-    background-image: url(../images/불법주차및전동킥보드.png);
+/*첫번째 섹션*/
+#main_img{ /*첫번째 섹션 배경 바꾸기*/
+    background-image: url(../images/parking_and_scooter.png);
     background-size: cover;
     background-position: center;
     /*사진을 왼쪽 위가 아닌 정중앙이게 만든다.*/
@@ -176,32 +163,30 @@ main {
     /*.overlay가 이 박스 안에서 움직이게 고정*/
 }
 
-#main_img .overlay {
+#main_img #overlay { /*배경화면 위에 블럭 만들기*/
     /*남색 그라데이션 투명 높이기*/
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
-    background: linear-gradient(to right,
-            rgba(15, 32, 67, 0.9) 0%,
-            /* 왼쪽 끝: 진한 남색 */
-            rgba(15, 32, 67, 0.7) 35%,
-            /* 중간: 서서히 흐려짐 */
-            rgba(15, 32, 67, 0) 65%
-            /* 오른쪽 끝: 완전 투명 (킥보드 보임) */
-        );
+    
+    background: linear-gradient( /*블럭에 그라데이션 넣고 투명도 넣기*/
+        to right, 
+        rgba(15, 32, 67, 0.9) 0%,    /* 왼쪽 끝: 진한 남색 */
+        rgba(15, 32, 67, 0.7) 35%,   /* 중간: 서서히 흐려짐 */
+        rgba(15, 32, 67, 0) 65%     /* 오른쪽 끝: 완전 투명 (킥보드 보임) */
+    );
 
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*세로 방향으로 만들기*/
     justify-content: center;
     padding-left: 10%;
     /* 왼쪽 여백을 주면 글씨가 이쁘게 정렬됨 */
     box-sizing: border-box;
 }
 
-.main-title {
+#main-title { /*메인 타이틀 글 설정하기*/
     font-size: 48px;
     font-weight: 800;
     line-height: 1.2;
@@ -209,11 +194,17 @@ main {
     color: white;
 }
 
-.btn-group {
+#main-desc{ /*메인 desc 글 설정하기*/
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#btn-group{ /*지금 제보하기 블록이랑 이용안내 블록에 flex*/
     display: flex;
 }
 
-#green {
+#green { /*지금 제보하기 블록 만들기*/
     font-family: 'Aggravo';
     width: 130px;
     height: 45px;
@@ -225,13 +216,11 @@ main {
     color: white;
     box-shadow: 0 8px 20px rgba(42, 157, 143, 0.35);
 }
-
-#green:hover {
+#green:hover { /*green 마우스 올리면 2p올라가며 그림자 더 넣기*/
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(42, 157, 143, 0.45);
 }
-
-#white {
+#white { /*이용안내 블록*/
     font-family: 'Aggravo';
     margin-left: 5px;
     width: 100px;
@@ -245,70 +234,261 @@ main {
     border-radius: 10px;
     color: white;
 }
-
-#white:hover {
+#white:hover { /*white 마우스 올리면 2p올라가며 그림자 더 넣기*/
     background-color: rgba(255, 255, 255, 0.22);
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
-
 }
-
-section p {
-    color: white;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-#main_info {
+/*두번째 섹션*/
+#main_info{ /*두번째 섹션 flex와 사이간격 다 같게 하기*/
     display: flex;
     justify-content: space-evenly;
 }
-
-.dv {
+.dv{ /*박스 만들기*/
     width: 350px;
     height: 500px;
-    border: solid 1px black;
-    /*테두리 그리기*/
-    border-radius: 30px;
-    /*꼭짓점 둥글게 그리기*/
+    border: solid 1px black; 
+    border-radius: 30px; 
     margin-top: 30px;
     margin-bottom: 30px;
-    box-shadow: 2px 2px 3px 3px gray;
+    background-color: rgb(241, 246, 244);
+    box-shadow: 
+        0 0 5px rgba(0, 255, 200, 0.3),
+        0 0 15px rgba(0, 255, 200, 0.5),
+        0 0 30px rgba(0, 255, 200, 0.2);
 }
+#scooter img{ /*스쿠터 이미지 넓이 정하기 및 그림자 넣기*/
+    border-radius: 30px;
+    margin: 15px 50px;
+    padding: 0 30px;
+    width: 250px;
+    height: 300px;
+    box-shadow: 
+        0 0 5px rgba(0, 255, 200, 0.3),
+        0 0 15px rgba(0, 255, 200, 0.5),
+        0 0 30px rgba(0, 255, 200, 0.2);
+}
+#car img{ /*불법주차 이미지 넓이 정하기 및 그림자 넣기*/
+    margin: 20px;
+    border-radius: 30px;
+    width: 300px;
+    height: 150px;
+    box-shadow: 
+        0 0 5px rgba(0, 255, 200, 0.3),
+        0 0 15px rgba(0, 255, 200, 0.5),
+        0 0 30px rgba(0, 255, 200, 0.2);
+}
+#scooter, #car p{ /*스쿠터랑 불법주차 이미지 밑에 텍스트 센터랑 폰트사이즈 맞추기*/
+    text-align: center;
+    font-size: 18px;
+}
+#car p{ /*불법주차 밑에 있는 글 마진 탑 값 넣기*/
+    margin-top: 60px;
+}
+#info p{ /*설명글 넣기*/
+    margin-top: 25px;
+    font-size: 1.1rem;
+    text-align: left;
+}
+#main_info span{ /*중요 부분 강조하기*/
+    color: rgb(10, 50, 40);
+    font-weight: bold;
+}
+/*footer 부분*/
 
-footer {
+footer { /*푸터 글꼴 및 배경색 정하기*/
     font-family: 'Pretendard';
     color: white;
     background-color: #1A1C20;
 }
-
-footer h1 img {
+footer h1 img{ /*푸터에 로고 넣기*/
     height: 65px;
     padding-top: 10px;
 }
-
-.policy a {
-    display: inline;
+.policy ul{ /*flex넣기*/
+    display: flex;
+}
+.policy ul li a{ /*개인정보 처리 방침들 마진값넣고 색 바꾸기*/
+    margin: 0px 5px;
     color: white;
 }
-
-#blue {
+#blue{ /*개인정보 처리방침만 색 바꾸기 및 마진값 없애기*/
+    margin-left : 0;
     color: aquamarine;
 }
-
-#pcy {
+#pcy{ /*위 아래 간격 넣기*/
     font-size: 18px;
     padding: 15px 0;
 }
-
-.policy a:hover {
+.policy a:hover{ /*마우스 올리면 선 생기게 하기*/
     text-decoration: underline white;
 }
-
-#footer_info {
+#footer_info{ /*옆에 간격 띄우기*/
     margin-left: 100px;
 }
 
-#copyright {
+footer i{
+    font-size: 45px; /*파비콘 크기 늘리기*/
+}
+#copyright{ /*copyright에패딩값 넣기*/
     padding: 5px;
+}
+/*반응형*/
+@media screen and (max-width: 768px) {
+    /* 1. 헤더 전체 레이아웃 (3등분 균형 맞추기) */
+    header { 
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    /* 2. 왼쪽 로고와 아이콘 크기 축소 */
+    header img {
+        width: 85px !important;
+        height: auto !important;
+    }
+
+    header a i { /*파비콘 축소*/
+        font-size: 22px !important;
+    }
+
+    /* 3. 가운데 메인 메뉴 (우리동네현황 안 깨지게 크기 최적화) */
+    nav > ul {
+        display: flex;
+        flex-direction: row; /* 가로 일자 유지 */
+        gap: 0px; 
+        padding: 0;
+        margin: 0;
+    }
+    nav > ul > li {
+        /* 글자 수가 많은 '우리동네현황'도 한 줄에 들어가도록 너비를 조금 늘리고 폰트를 조절 */
+        width: 90px !important; 
+        height: 50px;
+        line-height: 50px;
+        font-size: 13px !important;
+        text-align: center;
+    }
+    /* 4. 오른쪽 유틸리티(#bt) 영역을 세로로 정렬 */
+    #bt {
+        display: flex !important;
+        flex-direction: column !important; /* 가로가 아니라 위아래 '세로'로 쌓이게 설정 */
+        align-items: flex-end !important;  /* 오른쪽 벽으로 딱 붙여서 정렬 */
+        gap: 4px !important;               /* 위아래 요소들의 간격 조정 */
+        justify-content: center;
+    }
+    /*서브 메뉴*/
+    nav > ul > li {
+        position: relative; 
+    }
+
+    /* 2. 서브메뉴 전체 흰색 타원형 박스 (ul) */
+    nav > ul > li > ul {
+        display: flex;
+        flex-direction: row;      /* 가로 일자 정렬 */
+        flex-wrap: nowrap;        /* 줄바꿈 절대 금지 */
+        
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        width: 210px;             /* 768px 화면에 맞춰 가로폭 축소 */
+        min-width: 0;             /* 기존 최소 너비 리셋 */
+        
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 20px;      /* 타원형 유지 */
+        padding: 5px 10px;
+        margin: 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        z-index: 999;
+    }
+
+    /* 3. 서브메뉴 내부의 각 메뉴 칸 (li) */
+    nav > ul > li > ul > li {
+        flex: 1;                  /* 공간 공평하게 나눠 갖기 */
+        height: auto;
+        line-height: normal;      /* 거대한 기존 높이 리셋 */
+    }
+
+    /* 4. 서브메뉴 내부의 글자 (a) */
+    nav > ul > li > ul > li a {
+        display: block;
+        font-size: 10px;          /* 글자 크기 10px로 축소 */
+        font-weight: bold;
+        text-align: center;       /* 글자 정중앙 정렬 */
+        padding: 5px 2px;         /* 양옆 여백을 줄여 글자 가두기 */
+        color: #333;
+        white-space: nowrap;      /* 글자가 밑으로 안 떨어지게 고정 */
+    }
+    /* 신고, 로그인/회원가입 텍스트 세로 정렬 및 크기 */
+    #bt a {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important; /* 글씨가 가로로 찌부되지 않고 펴지게 */
+        text-align: right;
+    }
+    #bt #red{ /* 신고 버튼 튀게 색상 유지 */
+        color: red !important; 
+        font-weight: bold;
+    }
+
+    /* 5. 검색창 박스 세로 정렬 하단에 안착 */
+    .h_box, #h_box4, #bt form {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    #sear {
+        width: 75px !important;  /* 세로로 정렬되어서 공간이 생겼으니 살짝만 늘림 */
+        height: 20px !important;
+        font-size: 10px;
+    }
+    #bt i.fi-rr-search {
+        font-size: 11px !important;
+        margin-left: 2px;
+    }
+    /* 1. 부모 섹션: 카드들을 가로로 나열했다면 세로 일자로 정렬 */
+    #main_info {
+        display: flex;
+        flex-direction: column; /* 세로로 차곡차곡 쌓기 */
+        align-items: center;    /* 가운데 정렬 */
+        padding: 10px;
+    }
+
+    /* 2.핵심: 카드 박스 크기 유연하게 줄이기 */
+    .dv {
+        width: 90% !important;   /* 고정 350px 깨고 화면 양옆에 90% 크기로 꽉 채우기 */
+        height: auto !important;  /* 글자 길이에 맞게 높이가 자동으로 늘어나도록 설정 */
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+        padding: 20px;            /* 안쪽 여백을 줘서 글씨가 벽에 안 붙게 함 */
+        box-sizing: border-box;
+    }
+
+    /* 3. 첫 번째 킥보드 카드 내부 이미지 크기 조절 */
+    #scooter img {
+        width: 100% !important;  /* 카드 너비에 맞춰 꽉 채우기 */
+        max-width: 250px;         /* 너무 과하게 커지는 것 방지 */
+        height: auto !important; /* 비율 유지 */
+        margin: 0 auto 15px auto !important; /* 가운데 정렬 및 아래 여백 */
+        padding: 0 !important;   /* 기존 패딩 리셋 */
+    }
+
+    /* 4. 세 번째 불법주차 카드 내부 이미지 크기 조절 */
+    #car img {
+        width: 100% !important;  /* 카드 너비에 맞춰 꽉 채우기 */
+        max-width: 300px;
+        height: auto !important;
+        margin: 0 auto 15px auto !important;
+    }
+
+    /* 5. 글자 크기 및 여백 미세 조정 */
+    #scooter p, #car p, #info p {
+        font-size: 15px !important; /* 화면이 좁으니 글자 크기 살짝 축소 */
+        line-height: 1.5 !important; /* 줄간격을 넓혀서 가독성 확보 */
+        margin-top: 10px !important; /* 붕 떠있던 여백 줄이기 */
+    }   
 }

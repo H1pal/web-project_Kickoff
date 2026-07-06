@@ -4,8 +4,9 @@ reportForm.addEventListener("submit", () => { // 제출 이벤트 발생 시 익
   alert("신고 접수가 성공적으로 완료되었습니다."); // 알림창 띄우기
 });
 
-/* 아래에 보이는 코드는 제출이벤트는 감지하지 못하고 클릭 시에만 이벤트가 발생 */
-
+/* 아래에 보이는 코드는 제출이벤트는 감지하지 못하고 클릭 시에만
+ 이벤트가 발생하기 때문에 폼 제출 조건이 완충되지 않음
+ */
 // const submitButton = document.querySelector('.bt_submit');
 
 // submitButton.addEventListener("click", () => {
