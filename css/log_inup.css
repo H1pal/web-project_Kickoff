@@ -1,0 +1,120 @@
+#logform_section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+#logform_box {
+  width: 35vw;
+}
+
+#logform_box form {
+  display: flex;
+
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+#logform_info {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+  gap: 10px;
+}
+
+#logform_info input {
+  height: 50px;
+
+  border-radius: 8px 8px 0 0;
+  border-width: 0;
+  border-bottom: 1.5px #e8e8e8 solid;
+  
+  background-color: rgba(237, 237, 237, 0.619);
+
+  padding: 20px;
+
+  box-shadow: 0 1px 5px rgba(134, 145, 144, 0.35);
+}
+
+#logform_info input:focus {
+  border: none;
+}
+
+#logform_info input:active {
+  border: none;
+}
+
+#bt-login_box {
+  margin-left: 15px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+#bt-login {
+  width: auto;
+  height: 100%;
+
+  padding: 5px 10px;
+
+  aspect-ratio: 1/1;
+  border: 0px none transparent;
+
+  background-color: #ceeee2;
+
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(42, 157, 143, 0.35);
+
+  font-size: 1.1rem;
+  
+  transition: 1s ease all;
+  font-weight: 600;
+}
+
+#bt-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(42, 157, 143, 0.45);
+  background-color: #ceeee2e2;
+
+  color: #0d4c34e2;
+  /* font-weight: 700; */
+  text-shadow: 0 0 0.5px #0d4c34e2;
+
+  cursor: pointer;
+
+  border: 1px solid rgb(182, 220, 196);
+  aspect-ratio: 1.5/1;
+}
+
+#login_help-sign {
+  color: rgba(128, 128, 128, 0.722);
+}
+
+#login_help-sign ul {
+  display: flex;
+  gap: 10px;
+}
+
+#login_help-sign ul li {
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.span_help-sign {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.span_help-sign:hover {
+  text-decoration: underline;
+}
+
+#logform_logo {
+  padding: 10px;
+}
+
+#logform_logo img {
+  width: 70px;
+}
