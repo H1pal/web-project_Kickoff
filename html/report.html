@@ -21,34 +21,34 @@
             <ul>
                 <li> 웹페이지 소개  
                     <ul class="submenu">
-                        <li><a href="#">인사말</a></li>
-                        <li><a href="#">목표</a></li>
-                        <li><a href="#">제작자 소개</a></li>
+                        <li><a href="./sub_introduction/greetings.html">인사말</a></li>
+                        <li><a href="./sub_introduction/vision.html">목표</a></li>
+                        <li><a href="./sub_introduction/introduce_enterpriser.html">제작자 소개</a></li>
                     </ul>
                 </li>
                 <li> 서비스
                     <ul  class="submenu">
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">오시는 길</a></li>
-                        <li><a href="#">인증</a></li>
+                        <li><a href="./sub_service/notion.html">공지사항</a></li>
+                        <li><a href="./sub_service/directions.html">오시는 길</a></li>
+                        <li><a href="./sub_service/certification.html">인증</a></li>
                     </ul>
                 </li>
                 <li> 안내
                     <ul class="submenu">
-                        <li><a href="#">올바른 주차구역 안내</a></li>
-                        <li><a href="#">이용자 안전 및 이용방법</a></li>
+                        <li><a href="./sub_guide/parking_guide.html">올바른 주차구역 안내</a></li>
+                        <li><a href="./sub_guide/user_guide.html">이용자 안전 및 이용방법</a></li>
                     </ul>
                 </li>
                 <li> 고객센터
                     <ul class="submenu">
-                        <li><a href="#">건의사항</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="./sub_community/suggest.html">건의사항</a></li>
+                        <li><a href="./sub_community/faq.html">FAQ</a></li>
                     </ul>
                 </li>
                 <li> 우리 동네 현황
                     <ul class="submenu">
-                        <li><a href="#">자유게시판</a></li>
-                        <li><a href="../html/report_byenterprise.html">업체별 신고 접수 현황</a></li>
+                        <li><a href="./sub_situation/general_discussion.html">자유게시판</a></li>
+                        <li><a href="./sub_situation/report_byenterprise.html">업체별 신고 접수 현황</a></li>
                     </ul>
                 </li>
             </ul>
@@ -56,9 +56,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
             <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a href="./log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -72,13 +75,13 @@
         <section>
 
             <!-- 신고 접수 페이지 제목 -->
-            <div id="report_title">
+            <div id="report_title" class="js-reveal">
                 <h2>우리 동네 <span class="span_pm">PM</span> 민원 제보</h2>
                 <p class="form_notice">정확한 위치와 사진을 첨부해주시면 수거 및 조치가 빨라집니다.</p>
             </div>
 
             <!-- 메인 박스 -->
-            <div id="report_group">
+            <div id="report_group" class="js-reveal">
                 <!-- 포돌이 사진 -->
                 <div class="podoli">
                     <img src="../images/podol.png" alt="포돌이">
@@ -137,7 +140,7 @@
                                 <span class="upload_text">여기를 클릭하여 사진을 첨부하세요.</span>
                             </label>
                             <!-- 인풋 박스의 디자인 개선을 위해 인풋 박스를 안 보이게 하고,
-                              라벨이 시각적으로 눈에 띄게 설정 (AI 활용) -->
+                                라벨이 시각적으로 눈에 띄게 설정 (AI 활용) -->
                             <p class="file_tip">* 번호판이나 방치 상태가 잘 보이도록 찍어주세요.</p> 
                             <!-- 주의 문구 -->
                         </div>

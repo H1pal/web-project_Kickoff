@@ -6,15 +6,15 @@
     <title>Kick-Off</title>
     <link rel="icon" href="../../images/electric_kickboard.png">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/sub.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
 </head>
 <body>
     <header>
         <h1><a href="../main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분-->
             <ul>
-                <li> 웹페이지 소개  
+                <li> 웹페이지 소개
                     <ul class="submenu">
                         <li><a href="../sub_introduction/greetings.html">인사말</a></li>
                         <li><a href="../sub_introduction/vision.html">목표</a></li>
@@ -51,9 +51,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-            <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a id='red' href="../report.html">신고</a>
+            <a href="../../html/log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -63,15 +66,46 @@
         </div>
     </header>
     <main>
-      <section>
-        <!-- 이용자 안전 및 이용 방법 페이지 제목 -->
-        <div id="report_title">
-            <h2>이용자 안전 및 이용 이용방법</h2>
-        </div>
-      
-        <div></div>
-
-      </section>
+        <section class="sub_hero">
+            <h2>건의사항</h2>
+            <p>여러분의 소중한 의견을 들려주세요.</p>
+        </section>
+        <section class="sub_container">
+            <div class="sub_section">
+                <h3 class="sub_section_title">건의사항 작성</h3>
+                <p class="sub_section_desc">
+                    웹페이지 이용 중 불편한 점이나 개선하고 싶은 점이 있다면 자유롭게 남겨주세요.
+                    보내주신 의견은 서비스 개선에 소중하게 반영하겠습니다.
+                </p>
+                <div class="sub_form js-reveal">
+                    <form action="">
+                        <div class="field">
+                            <label for="suggest_name">이름</label>
+                            <input type="text" id="suggest_name" name="suggest_name" placeholder="이름을 입력하세요" required>
+                        </div>
+                        <div class="field">
+                            <label for="suggest_email">이메일</label>
+                            <input type="email" id="suggest_email" name="suggest_email" placeholder="email) name@example.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="suggest_type">건의 유형</label>
+                            <select id="suggest_type" name="suggest_type">
+                                <option value="function">기능 개선</option>
+                                <option value="design">디자인 개선</option>
+                                <option value="content">콘텐츠 오류</option>
+                                <option value="etc">기타</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="suggest_content">건의 내용</label>
+                            <textarea id="suggest_content" name="suggest_content" rows="6"
+                                placeholder="건의하실 내용을 자세히 적어주세요." required></textarea>
+                        </div>
+                        <button type="submit" class="sub_btn">건의 등록하기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div id="footer_info">
@@ -91,5 +125,6 @@
             </p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

@@ -6,9 +6,103 @@
     <title>Kick-Off</title>
     <link rel="icon" href="../images/electric_kickboard.png">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/report.css">
+    <link rel="stylesheet" href="../css/log_inup.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 <body>
-    
+    <main>
+        <section id="auth_section">
+            <div id="report_title">
+                <h2><span class="span_pm">PM</span> 로그인 / 회원가입</h2>
+                <p class="form_notice"><span class="span_pm">PM</span>의 안전한 세상을 가꾸어 볼까요?</p>
+            </div>
+
+            <div id="auth_box" class="js-reveal">
+                <div id="auth_tabs">
+                    <div class="auth_tab active" data-tab="login">로그인</div>
+                    <div class="auth_tab" data-tab="signup">회원가입</div>
+                </div>
+
+                <!-- 로그인 패널 -->
+                <div class="auth_panel active" id="panel_login">
+                    <form action="" class="auth_form">
+                        <div class="field">
+                            <label for="login_id">아이디</label>
+                            <input type="text" id="login_id" name="user_id" placeholder="아이디를 입력하세요" required>
+                        </div>
+                        <div class="field">
+                            <label for="login_pw">비밀번호</label>
+                            <input type="password" id="login_pw" name="user_password" placeholder="비밀번호를 입력하세요" required>
+                        </div>
+                        <button type="submit" class="auth_btn">로그인</button>
+                    </form>
+                    <div class="auth_help">
+                        <span class="link" data-goto="signup">회원가입</span>
+                        <span>아이디 찾기</span>
+                        <span>비밀번호 찾기</span>
+                    </div>
+                </div>
+
+                <!-- 회원가입 패널 -->
+                <div class="auth_panel" id="panel_signup">
+                    <form action="" class="auth_form">
+                        <div class="field">
+                            <label for="signup_id">아이디</label>
+                            <input type="text" id="signup_id" name="user_id" placeholder="아이디를 입력하세요" required>
+                        </div>
+                        <div class="field">
+                            <label for="signup_pw">비밀번호</label>
+                            <input type="password" id="signup_pw" name="user_password" placeholder="비밀번호를 입력하세요" required>
+                        </div>
+                        <div class="field">
+                            <label for="signup_pw_check">비밀번호 확인</label>
+                            <input type="password" id="signup_pw_check" name="user_password_check" placeholder="비밀번호를 한 번 더 입력하세요" required>
+                        </div>
+                        <div class="field">
+                            <label for="signup_name">이름</label>
+                            <input type="text" id="signup_name" name="user_name" placeholder="이름을 입력하세요" required>
+                        </div>
+                        <div class="field">
+                            <label for="signup_email">이메일</label>
+                            <input type="email" id="signup_email" name="user_email" placeholder="email) name@example.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="signup_tel">전화번호</label>
+                            <input type="tel" id="signup_tel" name="user_tel" placeholder="tel) 010-XXXX-XXXX" required>
+                        </div>
+                        <button type="submit" class="auth_btn">회원가입</button>
+                    </form>
+                    <div class="auth_help">
+                        <span class="link" data-goto="login">로그인으로 돌아가기</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="logform_logo">
+                <a href="./main.html">
+                    <img src="../images/kickoff.png" alt="logo">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 로그인 / 회원가입 탭 전환
+        const tabs = document.querySelectorAll('.auth_tab');
+        const panels = document.querySelectorAll('.auth_panel');
+
+        function switchTab(name) {
+            tabs.forEach((t) => t.classList.toggle('active', t.dataset.tab === name));
+            panels.forEach((p) => p.classList.toggle('active', p.id === 'panel_' + name));
+        }
+
+        tabs.forEach((t) => t.addEventListener('click', () => switchTab(t.dataset.tab)));
+
+        document.querySelectorAll('[data-goto]').forEach((el) => {
+            el.addEventListener('click', () => switchTab(el.dataset.goto));
+        });
+    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

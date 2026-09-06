@@ -1,207 +1,351 @@
-@font-face {
-    font-family: 'KakaoBigFont3';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'KakaoBigFont2';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'KakaoBigFont1';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-display: swap;
-} /* 폰트 불러오기 */
+/* ============================================================
+   Kick-Off 신고 접수 페이지 (report.html) — main.css 토큰 시스템
+   ============================================================ */
 
 .span_pm {
-    /* 글꼴 'pm'만 강조 색 주기 */
-    color: rgb(33, 79, 0);
-    font-family: 'KakaoBigFont1';
+  color: var(--primary);
+  font-weight: 800;
 }
 
-
-#report_title { /* 신고 접수 페이지 제목 박스 */
-    padding-top: 30px;
-    font-family: 'KakaoBigFont2';
-    font-size: 25px;
-    text-align: center;
-
-    margin-bottom: 20px;
+/* 신고 접수 페이지 제목 박스 */
+#report_title {
+  padding-top: 56px;
+  font-family: var(--font-sans);
+  font-size: clamp(26px, 3.6vw, 32px);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 12px;
 }
 
 .form_notice {
-    color: rgb(183, 183, 183);
-    
-    font-size: 15px;
+  color: var(--muted);
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
-#report_group { /* 신고 접수 폼, 포돌, 포순 */
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly; /* 각각 div로 이루어진 사진과 폼들의 일정한 간격 배치 */
-
-    padding-bottom: 40px;
+/* 신고 폼 + 캐릭터 */
+#report_group {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px 20px 80px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* 신고 접수 메인 폼 */
 #report_form {
-    border: 2px rgb(61, 154, 120) solid;
-    border-radius: 15px;
-    background-color: white;
-    padding: 20px 30px;
-
-    width: 47vw;
+  flex: 1 1 720px;
+  max-width: 760px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--bg);
+  padding: clamp(26px, 3vw, 40px);
+  box-shadow: var(--shadow-md);
+  transition:
+    box-shadow 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+#report_form:hover {
+  box-shadow: var(--shadow-lg);
 }
 
-/* 각 신고 속성에 따른 박스 (fieldset) */
+/* 각 신고 속성에 따른 박스 */
 .report_form_group {
-    padding: 10px;
-
-    line-height: 40px;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.report_form_group:last-of-type {
+  margin-bottom: 0;
 }
 
-/* 각 속성에 따른 제목 글꼴 설정 */
+/* 각 속성에 따른 제목 */
 .report_form_title {
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    font-size: large;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 10px;
+  letter-spacing: -0.005em;
 }
 
-.podoli img {
-    width: 300px;
-    height: 400px;
+/* 캐릭터 이미지 (포돌, 포순) */
+.podoli,
+.posuni {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+  margin-bottom: 20px;
 }
-/* 두 사진(포돌, 포순)이 서로 사진의 크기가 다르기 때문에 따로 설정 */
+.podoli img,
 .posuni img {
-    width: 290px;
-    height: 435px;
+  width: auto;
+  height: 360px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(15, 32, 67, 0.15));
+  transition: transform 0.35s var(--ease);
+}
+.podoli img {
+  width: 200px;
+  height: 380px;
+}
+.posuni img {
+  width: 200px;
+  height: 400px;
+}
+.podoli:hover img,
+.posuni:hover img {
+  transform: translateY(-4px);
 }
 
-/* 일반 텍스트 입력창 공통 스타일 */
-#report_form input[type="email"], /* 이메일 인풋 */
-#report_form input[type="tel"], /* 전화번호 인풋 */
-#report_form input[type="text"], /* 텍스트 인풋 */
-#report_form select, /* 마크다운 인풋 */
-#report_form textarea /* 텍스트라이라 인풋 */{
-    width: 100%;
-    padding: 12px 14px;
-
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-
-    font-size: 14px;
-
-    background-color: #fdfdfd;
-
-    margin-bottom: 8px; /* 요소 간 간격 추가 */
+/* 인풋 공통 */
+#report_form input[type="email"],
+#report_form input[type="tel"],
+#report_form input[type="text"],
+#report_form select,
+#report_form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14.5px;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  margin-bottom: 8px;
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    background 0.2s var(--ease);
 }
-
-/* 버튼 위로 마우스 올릴 시 실행할 기본 설정값 */
 #report_form input:hover,
 #report_form select:hover,
 #report_form textarea:hover {
-    background-color: #f1f3f594;
+  background-color: var(--bg-soft);
+}
+#report_form input:focus,
+#report_form select:focus,
+#report_form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--bg);
+  box-shadow: var(--ring);
 }
 
-/* 버튼의 기본 스타일 정의 */
+#report_form select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 13px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
 #report_form button {
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: var(--radius-btn);
 }
 
-/* radio 세로로 배치 되게끔 설정 */
+/* radio 세로 배치 */
 .radio_buttons {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-
-/* radio 인풋 글꼴 설정 */
+#radio_group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  transition:
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+#radio_group:hover {
+  border-color: var(--primary-tint);
+  background: var(--primary-soft);
+}
+#radio_group input[type="radio"] {
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
 #radio_group label {
-    font-weight: 600;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  flex: 1;
 }
 
 .hidden_file {
-    /* 파일 선택 버튼 인터페이스 숨기기(디자인) */
-    display: none;
+  display: none;
 }
 
-.file_upload_box img {
-    width: 100%; /* 부모 박스에서 벗어나는 것 방지 */
-    height: 100%; /* 부모 박스에서 벗어나는 것 방지 */
-    object-fit: contain; /* 이미지가 레이어 내부에 꽉 채우기 */
-}
-
-/* 인풋 박스를 안보이개 하는 대신 label 박스를 시각효과로 나타내어 200px로 디자인 개선 (AI 사용) */
+/* 파일 업로드 박스 */
 .file_upload_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 내부 텍스트 정중앙 정렬 */
-
-    height: 300px;
-    width: 100%;
-    background-color: white;
-    border: 1.5px dashed #3d9a78;
-    /* 점선 테두리로 업로드 영역임을 표시 */
-    border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  height: 240px;
+  width: 100%;
+  background: var(--bg-soft);
+  border: 2px dashed var(--primary-tint);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  color: var(--muted);
+  transition:
+    background 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+  text-align: center;
+  padding: 16px;
+  overflow: hidden;
+}
+.file_upload_box:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+.file_upload_box i,
+.file_upload_box::before {
+  content: "\f093";
+  font-family: "uicons-regular-rounded";
+  font-size: 32px;
+  color: var(--primary);
+  line-height: 1;
 }
 
-/* 사진 업로드 인풋에 뜰 텍스트 */
+.file_upload_box img.file_preview_img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .upload_text {
-    color: #666666;
-    font-size: 14px;
-    margin-top: 8px;
+  color: var(--body);
+  font-size: 14.5px;
+  font-weight: 500;
 }
 
-/* 파일 인풋 밑의 주의 문구 */
 .file_tip {
-    color: red; /* 붉은 계열로써 주의 문구의 가시성을 독보이게 함 */
-    font-size: 12px;
-    line-height: 17px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin-top: 8px;
 }
 
-/* 가상의 지도를 보여주는 '약도 보기' 버튼 설정 */
+/* 약도 보기 버튼 */
 #map_bt {
-    background-color: #778491;
-    color: white;
-
-    font-weight: 600;
-
-    padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 0 16px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition:
+    background 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+#map_bt:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary-tint);
+  color: var(--primary-strong);
 }
 
-/* '약도 보기' 버튼 위에 마우스를 올릴 시 */
-#map_bt:hover {
-    background-color: #6c757d;
+.address_search_box {
+  display: flex;
+  gap: 8px;
+}
+.address_search_box input {
+  flex: 1;
 }
 
 #report_content {
-    resize: none; /* 텍스트 아리아 사이즈 고정 */
+  resize: vertical;
+  min-height: 120px;
 }
 
 /* 제출 버튼 */
+.form_submit {
+  margin-top: 28px;
+}
 .bt_submit {
-    width: 100%;
-
-    background-color: #3d9a78;
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-    
-    padding: 16px;
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    background 0.2s var(--ease);
+  box-shadow: 0 10px 24px -10px rgba(13, 148, 136, 0.55);
+  letter-spacing: -0.01em;
+}
+.bt_submit:hover {
+  background: var(--primary-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -12px rgba(13, 148, 136, 0.65);
+}
+.bt_submit:active {
+  transform: scale(0.98);
 }
 
-/* 제출 버튼위에 마우스를 올릴 시 실행 */
-.bt_submit:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(42, 157, 143, 0.45);
-    background-color: #45aa85;
-
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+  .podoli,
+  .posuni {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  #report_title {
+    padding-top: 36px;
+    font-size: 24px;
+  }
+  #report_form {
+    padding: 24px;
+  }
+  #report_group {
+    padding: 24px 16px 56px;
+  }
+  .report_form_title {
+    font-size: 14.5px;
+  }
+  .file_upload_box {
+    height: 180px;
+  }
+  .address_search_box {
+    flex-direction: column;
+  }
+  .address_search_box #map_bt {
+    width: 100%;
+  }
 }

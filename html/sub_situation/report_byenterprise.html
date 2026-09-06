@@ -53,9 +53,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-            <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a id='red' href="../report.html">신고</a>
+            <a href="../../html/log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -67,7 +70,7 @@
     <main>
         <!-- 업체별 신고 접수 현황 헤드라인 섹션 -->
         <!-- 설명글 추가하는 선택지를 위한 유연성 있는 선택자 설정 -->
-        <section class="report_sec" id="report_headline_container">
+        <section class="report_sec js-reveal" id="report_headline_container">
 
             <div id="report_head">
                 <div id="report_title">
@@ -95,7 +98,7 @@
 
         </section>
             
-        <section class="report_sec" id="report_resource_container">
+        <section class="report_sec js-reveal" id="report_resource_container">
             
             <!-- 업체별 신고 접수 현황을 그래프와 설명으로 보여줌 -->
             <div class="report_content_box1">
@@ -164,7 +167,7 @@
                 <div id="report_table_box">
                     <table id="report_table">
                         <caption> <!-- 캡션 누를 시 팝업 생성 -->
-                            <a href="../html/report_stats.html"
+                            <a href="./report_stats.html"
                                 target="_blank"
                                 onclick="window.open(this.href, 'popup', 'width=500, height=400, scrollbars=yes'); return false;">
                                 전체 통계
@@ -224,5 +227,6 @@
             </p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 </body>
 </html>
