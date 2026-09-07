@@ -1,246 +1,250 @@
-#report_headline_container { /* 제목 및 년도 nav 박스 */
-  display: flex;
-  justify-content: center;
+/* ============================================================
+   Kick-Off 업체별 신고 접수 현황 (report_byenterprise.html)
+   - main.css 토큰 시스템 기반
+   ============================================================ */
 
-  padding: 40px 20px 20px 20px;
+.report_sec { padding: 0 24px; max-width: 1280px; margin: 0 auto; }
+
+/* 헤드라인 (제목 + 연도 nav) */
+#report_headline_container {
+    padding: 56px 20px 24px;
+    display: flex;
+    justify-content: center;
+}
+#report_head {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
-#report_head { /* 제목 및 년도 nav 박스 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* 연도 nav */
 #year_list {
-  width: 88%; /* 년도 nav 윗테두리 조절 용도 */
-
-  border-top: 3px rgb(61, 61, 61) solid; /* 윗테두리 */
-  padding-bottom: 30px;
+    width: 100%;
+    max-width: 720px;
+    border-top: 1px solid var(--border);
+    padding: 24px 0 4px;
+    margin-top: 24px;
 }
-
 #year_list ul {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-
 #year_list li {
-  font-size: 18px;
-  padding: 6px 24px;
-
-  font-weight: 700;
-  color: #a0a0a0;
-
-  border-radius: 20px;
+    font-size: 15px;
+    padding: 8px 22px;
+    font-weight: 600;
+    color: var(--muted);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
+}
+#year_list li:hover {
+    color: var(--primary-strong);
+    background: var(--primary-soft);
+    transform: translateY(-1px);
+}
+#year_list li.active {
+    color: #fff;
+    background: var(--primary);
+    box-shadow: 0 6px 14px -6px rgba(13, 148, 136, .55);
 }
 
-#year_list li:hover, 
-#year_list .active {
-  color: #3d9a78;
-  transform: translateY(-0.5px);
-  text-shadow: 0 5px 20px rgba(42, 157, 144, 0.252);
-  font-weight: 800;
-}
-
-/**
-설명 글 디자인
-*/
-
-/* #report_description_box {
-  width: 60vw;
-  background-color: #f8fafd;
-  border-left: 5px solid #3d9a78;
-  border-radius: 12px;
-  padding: 22px 28px;
-  margin: 10px 0px;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); 
-}
-
-#report_description_box p {
-  color: #4a5568;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.5;
-
-  text-align: left; 
-} */
-
+/* 컨텐츠 컨테이너 */
 #report_resource_container {
-  display: grid;
-  grid-template-columns: 4.5fr 5fr; /* 원형 그래프와 오른쪽 콘텐츠 비율 분할 */
-  gap: 35px;
-  
-  width: 100%;
-  padding: 0 20px;
+    display: grid;
+    grid-template-columns: 4.5fr 5fr;
+    gap: 28px;
+    padding: 0 20px 80px;
 }
 
-/* 박스 공통 패딩 */
+/* 공통 카드 */
 .report_content_box1, .report_content_box2 {
-  padding: 30px;
+    padding: clamp(22px, 2.6vw, 32px);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.report_content_box1:hover, .report_content_box2:hover {
+    box-shadow: var(--shadow-md);
 }
 
-/* 원 그래프  */
 .report_box_title h3 {
-  margin: 0 0 20px 0;
-  font-size: 18px;
-  color: #2d3748;
-  font-weight: 700;
+    margin: 0 0 22px 0;
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 700;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
 }
 
-/* 왼쪽 원형 그래프 디자인 구역 */
+/* 도넛 그래프 영역 */
 .report_content_box1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-/* 원 그래픝 이미지 크기 조절 */
 #report_doughnut_graph img {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 25px;
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 22px;
+    transition: transform .35s var(--ease);
 }
+#report_doughnut_graph img:hover { transform: scale(1.02); }
 
 #report_doughnut_kind ul {
-  display: flex;
-  
-  justify-content: center;
-  gap: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
 }
-
-/* 원 그래프 종류 디자인 설정 */
 #report_doughnut_kind li {
-  font-size: 14px;
-  font-weight: 700;
-
-  color: #4a5568;
-  
-  display: flex;
-  align-items: center;
-  gap: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--body);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--bg-soft);
 }
 
-
-/* 운형 그래프 밑 표시 문자 색 */
-.gicoo {
-  color: rgb(0, 35, 174);
-}
-
-.beam {
-  color: rgb(255, 145, 0);
-}
-
-.deer {
-  color: rgb(170, 255, 228);
-}
-
-.etc {
-  color: rgb(90, 0, 128);
+/* 도넛 그래프 색상 표식 */
+.gicoo::before { color: #4755a7; }
+.beam::before  { color: #d35400; }
+.deer::before  { color: #23ab5e; }
+.etc::before   { color: #82439e; }
+.gicoo, .beam, .deer, .etc { color: var(--body); }
+.gicoo::before, .beam::before, .deer::before, .etc::before {
+    content: '●';
+    font-size: 11px;
 }
 
 /* 막대 그래프 */
 #report_bar_chart {
-  display: flex;
-  justify-content: space-around;
-
-  height: 220px; 
-  padding: 20px 10px 10px 10px;
-  border-bottom: 2px solid #e2e8f0; 
-  border-top: 2px solid #e2e8f0; 
-  margin-bottom: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 18px;
+    height: 240px;
+    padding: 28px 14px 14px;
+    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    margin-bottom: 32px;
+    background: var(--bg-soft);
+    border-radius: var(--radius-sm);
 }
 
-/* 막대와 텍스트 그룹 */
 .bar_group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 55px;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    height: 100%;
 }
-
-/* 막대가 솟아오르는 기둥 틀 */
 .bar_wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end; /* 아래에서 위로 채워지도록 고정 */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
-
 .bar_fill {
-  width: 100%;
-  position: relative;
+    width: 100%;
+    position: relative;
+    height: 0;
+    border-radius: 6px 6px 0 0;
+    transition: height 1s var(--ease);
 }
-
-/* 막대 기둥 내부/상단에 뜨는 수치 숫자 */
+.bar_group.in-view .bar_fill { height: var(--target-height, 0%); }
 .bar_value {
-  position: absolute; 
-  top: -18px; /* postion을 이용해서 수치 숫자 막대 위로 보내기 */
-  
-  left: 50%; /* 수치 텍스트를 위치 바 가운데로 조정 */
-  transform: translateX(-50%); /* 수치 텍스트를 위치 바 가운데로 조정 */
-  font-size: 13px;
-  font-weight: 700;
-  color: #2d3748;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--ink);
+    opacity: 0;
+    transition: opacity .35s var(--ease) .8s;
 }
+.bar_group.in-view .bar_value { opacity: 1; }
 
-/* 기업명 텍스트 (X축 아래 라벨) */
 .bar_label {
-  margin: 10px 0 0 0;
-  font-size: 14px;
-  font-weight: 700;
-  color: #718096;
+    margin: 12px 0 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
 }
 
-/* 원형 그래프 색상 배열과 동일하게 테마 매칭 */
-.color_gicoo { 
-  background: linear-gradient(to top, #4755a7, #5c6bc0); 
-  height: 80%;
-}
+/* 막대 색상 (그라데이션) — 도넛 그래프와 통일 */
+.color_gicoo { background: linear-gradient(to top, #4755a7, #5c6bc0); }
+.color_beam  { background: linear-gradient(to top, #b84900, #f39c12); }
+.color_deer  { background: linear-gradient(to top, #1f8a4d, #2ecc71); }
+.color_etc   { background: linear-gradient(to top, #6e3581, #9b59b6); }
 
-.color_beam { 
-  background: linear-gradient(to top, #b84900, #d35400); 
-  height: 50%;
-}
-
-.color_deer { 
-  background: linear-gradient(to top, #23ab5e, #2ecc71); 
-  height: 30%;
-}
-
-.color_etc { 
-  background: linear-gradient(to top, #82439e, #9b59b6); 
-  height: 15%;
-}
-
-/* 테이블 표 */
+/* 테이블 */
 #report_table {
-  width: 100%;
-  border-collapse: collapse; /* 겹치는 테두리를 하나로 합치기 */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    font-size: 14.5px;
 }
-
-/* 테이블 th, td 기본 성절 */
-#report_table th, #report_table td { 
-  border: 1px solid #dee2e6;
-  padding: 8px;
+#report_table th, #report_table td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: center;
+    color: var(--body);
 }
-
-#report_table td {
-  height: 44.5px;
-}
-
-#report_table caption {
-  text-align: right; /* 캡션 오른쪽으로 띄우기 */
-  margin-bottom: 5px;
-}
-
+#report_table tr:last-child td { border-bottom: none; }
 #report_table thead {
-  background-color: #e1ffc1;
+    background: var(--primary-soft);
+    color: var(--ink);
 }
-
+#report_table thead th {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid var(--primary-tint);
+}
+#report_table tbody tr {
+    transition: background .15s var(--ease);
+}
+#report_table tbody tr:hover { background: var(--bg-soft); }
+#report_table caption {
+    text-align: right;
+    margin-bottom: 8px;
+}
 #report_table caption a {
-  text-decoration: underline; /* 캡션 밑줄 설정하기 */
-  color: rgb(94, 94, 94);
-  font-size: 15px;
+    color: var(--muted);
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color .2s var(--ease);
+}
+#report_table caption a:hover { color: var(--primary); }
+
+/* 반응형 */
+@media screen and (max-width: 960px) {
+    #report_resource_container { grid-template-columns: 1fr; }
+}
+@media screen and (max-width: 640px) {
+    .report_sec { padding: 0 16px; }
+    #report_headline_container { padding: 40px 16px 20px; }
+    #report_bar_chart { height: 200px; gap: 10px; padding: 24px 8px 10px; }
+    .bar_group { width: 44px; }
+    #report_table th, #report_table td { padding: 10px 8px; font-size: 13px; }
 }
