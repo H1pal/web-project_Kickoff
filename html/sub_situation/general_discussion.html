@@ -6,15 +6,15 @@
     <title>Kick-Off</title>
     <link rel="icon" href="../../images/electric_kickboard.png">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/sub.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
 </head>
 <body>
     <header>
         <h1><a href="../main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분-->
             <ul>
-                <li> 웹페이지 소개  
+                <li> 웹페이지 소개
                     <ul class="submenu">
                         <li><a href="../sub_introduction/greetings.html">인사말</a></li>
                         <li><a href="../sub_introduction/vision.html">목표</a></li>
@@ -51,9 +51,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-            <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a id='red' href="../report.html">신고</a>
+            <a href="../../html/log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -63,15 +66,73 @@
         </div>
     </header>
     <main>
-      <section>
-        <!-- 이용자 안전 및 이용 방법 페이지 제목 -->
-        <div id="report_title">
-            <h2>이용자 안전 및 이용 이용방법</h2>
-        </div>
-      
-        <div></div>
-
-      </section>
+        <section class="sub_hero">
+            <h2>자유게시판</h2>
+            <p>우리 동네 킥보드 이야기를 자유롭게 나눠보세요.</p>
+        </section>
+        <section class="sub_container">
+            <div class="sub_section">
+                <h3 class="sub_section_title">자유게시판</h3>
+                <p class="sub_section_desc">
+                    킥보드 이용 경험, 불법 주차 제보, 안전 관련 이야기 등 다양한 의견을 자유롭게 나누는 공간입니다.
+                </p>
+                <table class="board_table js-reveal">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                            <th>조회</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6</td>
+                            <td class="td_title"><a href="#">우리 아파트 앞에 킥보드가 계속 방치돼 있어요</a></td>
+                            <td>동네주민</td>
+                            <td>2026-09-03</td>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="td_title"><a href="#">헬멧 안 쓰고 타는 학생들 너무 위험해 보여요</a></td>
+                            <td>안전지킴이</td>
+                            <td>2026-08-28</td>
+                            <td>245</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="td_title"><a href="#">불법 주차 차량 때문에 사고 날 뻔했어요</a></td>
+                            <td>출근길</td>
+                            <td>2026-08-19</td>
+                            <td>310</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="td_title"><a href="#">킥보드 올바른 주차 방법 공유합니다</a></td>
+                            <td>PM러버</td>
+                            <td>2026-08-10</td>
+                            <td>189</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="td_title"><a href="#">우리 동네 킥보드 주차구역 위치 정리</a></td>
+                            <td>동네지도</td>
+                            <td>2026-07-30</td>
+                            <td>402</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="td_title"><a href="#">Kick-Off 오픈 축하합니다!</a></td>
+                            <td>관리자</td>
+                            <td>2026-07-01</td>
+                            <td>520</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
     <footer>
         <div id="footer_info">
@@ -91,5 +152,6 @@
             </p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

@@ -6,15 +6,15 @@
     <title>Kick-Off</title>
     <link rel="icon" href="../../images/electric_kickboard.png">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/sub.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
 </head>
 <body>
     <header>
         <h1><a href="../main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분-->
             <ul>
-                <li> 웹페이지 소개  
+                <li> 웹페이지 소개
                     <ul class="submenu">
                         <li><a href="../sub_introduction/greetings.html">인사말</a></li>
                         <li><a href="../sub_introduction/vision.html">목표</a></li>
@@ -51,9 +51,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-            <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a id='red' href="../report.html">신고</a>
+            <a href="../../html/log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -63,15 +66,50 @@
         </div>
     </header>
     <main>
-      <section>
-        <!-- 이용자 안전 및 이용 방법 페이지 제목 -->
-        <div id="report_title">
-            <h2>이용자 안전 및 이용 이용방법</h2>
-        </div>
-      
-        <div></div>
-
-      </section>
+        <section class="sub_hero">
+            <h2>FAQ</h2>
+            <p>자주 묻는 질문을 모아두었습니다.</p>
+        </section>
+        <section class="sub_container">
+            <div class="sub_section">
+                <h3 class="sub_section_title">자주 묻는 질문</h3>
+                <div class="faq_item js-reveal" data-faq>
+                    <div class="faq_q"><span><span class="q_mark">Q.</span>전동 킥보드는 몇 살부터 탈 수 있나요?</span></div>
+                    <div class="faq_a">
+                        전동 킥보드는 원동기장치자전거 면허 이상을 소지한 만 16세 이상부터 이용할 수 있습니다.
+                        미성년자의 무면허 운전은 불법이며, 사고 발생 시 처벌 대상이 될 수 있습니다.
+                    </div>
+                </div>
+                <div class="faq_item js-reveal" data-faq>
+                    <div class="faq_q"><span><span class="q_mark">Q.</span>헬멧을 꼭 써야 하나요?</span></div>
+                    <div class="faq_a">
+                        네, 전동 킥보드 주행 시 안전모(헬멧) 착용은 의무입니다.
+                        헬멧을 착용하지 않으면 사고 발생 시 치명적인 머리 부상을 입을 위험이 매우 큽니다.
+                    </div>
+                </div>
+                <div class="faq_item js-reveal" data-faq>
+                    <div class="faq_q"><span><span class="q_mark">Q.</span>킥보드는 어디에서 타야 하나요?</span></div>
+                    <div class="faq_a">
+                        전동 킥보드는 원칙적으로 차도에서 주행해야 합니다.
+                        인도에서 주행하는 것은 보행자의 안전을 위협하므로 금지되어 있습니다.
+                    </div>
+                </div>
+                <div class="faq_item js-reveal" data-faq>
+                    <div class="faq_q"><span><span class="q_mark">Q.</span>위험한 킥보드나 불법 주차 차량은 어떻게 신고하나요?</span></div>
+                    <div class="faq_a">
+                        <a href="../report.html" class="highlight">신고 페이지</a>에서 위치와 사진을 첨부하여 제보하실 수 있습니다.
+                        정확한 위치와 사진을 함께 남겨주시면 수거 및 조치가 더욱 빨라집니다.
+                    </div>
+                </div>
+                <div class="faq_item js-reveal" data-faq>
+                    <div class="faq_q"><span><span class="q_mark">Q.</span>두 명이 함께 타도 되나요?</span></div>
+                    <div class="faq_a">
+                        아니요. 전동 킥보드는 1인용 이동장치입니다.
+                        두 명 이상이 함께 타면 균형을 잃기 쉬워 큰 사고로 이어질 수 있습니다.
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div id="footer_info">
@@ -91,5 +129,6 @@
             </p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

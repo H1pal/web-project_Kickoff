@@ -6,15 +6,15 @@
     <title>Kick-Off</title>
     <link rel="icon" href="../../images/electric_kickboard.png">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/sub.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
 </head>
 <body>
     <header>
         <h1><a href="../main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분-->
             <ul>
-                <li> 웹페이지 소개  
+                <li> 웹페이지 소개
                     <ul class="submenu">
                         <li><a href="../sub_introduction/greetings.html">인사말</a></li>
                         <li><a href="../sub_introduction/vision.html">목표</a></li>
@@ -51,9 +51,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-            <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a id='red' href="../report.html">신고</a>
+            <a href="../../html/log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -63,15 +66,34 @@
         </div>
     </header>
     <main>
-      <section>
-        <!-- 이용자 안전 및 이용 방법 페이지 제목 -->
-        <div id="report_title">
-            <h2>이용자 안전 및 이용 이용방법</h2>
-        </div>
-      
-        <div></div>
-
-      </section>
+        <section class="sub_hero">
+            <h2>제작자 소개</h2>
+            <p>Kick-Off를 함께 만든 사람들</p>
+        </section>
+        <section class="sub_container">
+            <div class="sub_section">
+                <h3 class="sub_section_title">팀 소개</h3>
+                <p class="sub_section_desc">
+                    Kick-Off는 킥보드 안전과 위험성에 대해 알리고자 하는 두 명의 제작자가 힘을 모아 만들었습니다.
+                </p>
+                <div class="card_grid">
+                    <div class="info_card js-reveal">
+                        <div class="card_icon"><i class="fi fi-rr-user"></i></div>
+                        <h3>유희성</h3>
+                        <p>1학년 3반 12번<br><br>
+                        웹페이지의 전체 기획과 기능 구현을 담당했습니다.
+                        킥보드 사고의 위험성을 널리 알리고 싶은 마음으로 제작에 참여했습니다.</p>
+                    </div>
+                    <div class="info_card js-reveal">
+                        <div class="card_icon"><i class="fi fi-rr-user"></i></div>
+                        <h3>이하랑</h3>
+                        <p>1학년 3반 13번<br><br>
+                        웹페이지의 디자인과 콘텐츠 구성을 담당했습니다.
+                        안전한 보행길을 만들고자 하는 마음으로 제작에 참여했습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div id="footer_info">
@@ -91,5 +113,6 @@
             </p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

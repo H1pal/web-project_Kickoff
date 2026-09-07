@@ -6,15 +6,15 @@
     <title>Kick-Off</title>
     <link rel="icon" href="../../images/electric_kickboard.png">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/sub.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
 </head>
 <body>
     <header>
         <h1><a href="../main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분-->
             <ul>
-                <li> 웹페이지 소개  
+                <li> 웹페이지 소개
                     <ul class="submenu">
                         <li><a href="../sub_introduction/greetings.html">인사말</a></li>
                         <li><a href="../sub_introduction/vision.html">목표</a></li>
@@ -51,9 +51,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-            <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a id='red' href="../report.html">신고</a>
+            <a href="../../html/log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -63,15 +66,51 @@
         </div>
     </header>
     <main>
-      <section>
-        <!-- 이용자 안전 및 이용 방법 페이지 제목 -->
-        <div id="report_title">
-            <h2>이용자 안전 및 이용 이용방법</h2>
-        </div>
-      
-        <div></div>
-
-      </section>
+        <section class="sub_hero">
+            <h2>올바른 주차구역 안내</h2>
+            <p>킥보드는 어디에 세워야 할까요?</p>
+        </section>
+        <section class="sub_container">
+            <div class="sub_section">
+                <h3 class="sub_section_title">전동 킥보드, 이렇게 주차해 주세요</h3>
+                <p class="sub_section_desc">
+                    무단 방치된 킥보드는 보행자의 통행을 방해하고, 도로변에 세워진 킥보드는 운전자의 시야를 가려
+                    사고를 유발합니다. 올바른 주차 습관이 안전한 거리를 만듭니다.
+                </p>
+                <div class="do_dont">
+                    <div class="do_box js-reveal">
+                        <h3>올바른 주차</h3>
+                        <ul>
+                            <li>지정된 주차구역 또는 거치대에 세우기</li>
+                            <li>보행자의 통행을 방해하지 않는 곳에 세우기</li>
+                            <li>차도와 멀리 떨어진 안전한 곳에 세우기</li>
+                            <li>넘어지지 않도록 스탠드를 제대로 내리기</li>
+                            <li>이용 종료 후 앱에서 주차 사진을 등록하기</li>
+                        </ul>
+                    </div>
+                    <div class="dont_box js-reveal">
+                        <h3>잘못된 주차</h3>
+                        <ul>
+                            <li>인도 한가운데에 방치하기</li>
+                            <li>횡단보도나 점자블록 위에 세우기</li>
+                            <li>버스 정류장, 지하철 출입구 앞에 세우기</li>
+                            <li>차도 가장자리에 세워 시야를 가리기</li>
+                            <li>계단이나 경사로에 세워 넘어지게 하기</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_section">
+                <h3 class="sub_section_title">불법 주차 차량도 함께 신고해 주세요</h3>
+                <div class="info_card js-reveal">
+                    <p>
+                        도로변에 불법으로 주차된 <span class="highlight">자동차</span> 역시 운전자의 시야를 가리는
+                        거대한 사각지대를 만들어 킥보드와 보행자 사고의 원인이 됩니다.
+                        불법 주차 차량을 발견하셨다면 <a href="../report.html" class="highlight">신고 페이지</a>에서 제보해 주세요.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div id="footer_info">
@@ -91,5 +130,6 @@
             </p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

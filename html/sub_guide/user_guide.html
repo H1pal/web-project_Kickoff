@@ -6,15 +6,15 @@
     <title>Kick-Off</title>
     <link rel="icon" href="../../images/electric_kickboard.png">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/sub.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
 </head>
 <body>
     <header>
         <h1><a href="../main.html"><i class="fi fi-rr-electric-scooter"></i><img src="../../images/kickoff.png" alt="logo"></a></h1><!--로고부분-->
         <nav> <!--메뉴 및 서브메뉴 부분-->
             <ul>
-                <li> 웹페이지 소개  
+                <li> 웹페이지 소개
                     <ul class="submenu">
                         <li><a href="../sub_introduction/greetings.html">인사말</a></li>
                         <li><a href="../sub_introduction/vision.html">목표</a></li>
@@ -51,9 +51,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
-            <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a id='red' href="../report.html">신고</a>
+            <a href="../../html/log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -63,15 +66,75 @@
         </div>
     </header>
     <main>
-      <section>
-        <!-- 이용자 안전 및 이용 방법 페이지 제목 -->
-        <div id="report_title">
-            <h2>이용자 안전 및 이용 이용방법</h2>
-        </div>
-      
-        <div></div>
-
-      </section>
+        <section class="sub_hero">
+            <h2>이용자 안전 및 이용방법</h2>
+            <p>안전하게 킥보드를 타는 5단계</p>
+        </section>
+        <section class="sub_container">
+            <div class="sub_section">
+                <h3 class="sub_section_title">주행 전, 이 순서대로 확인하세요</h3>
+                <div class="step_list">
+                    <div class="step_item js-reveal">
+                        <div class="step_num">1</div>
+                        <div>
+                            <h3>면허 확인</h3>
+                            <p>전동 킥보드는 원동기장치자전거 면허 이상이 필요합니다. 면허 없이 타는 것은 불법입니다.</p>
+                        </div>
+                    </div>
+                    <div class="step_item js-reveal">
+                        <div class="step_num">2</div>
+                        <div>
+                            <h3>안전모 착용</h3>
+                            <p>헬멧을 반드시 착용하세요. 사고 시 머리를 보호해 주는 가장 중요한 장비입니다.</p>
+                        </div>
+                    </div>
+                    <div class="step_item js-reveal">
+                        <div class="step_num">3</div>
+                        <div>
+                            <h3>장비 점검</h3>
+                            <p>브레이크, 타이어, 배터리 상태를 확인하고 이상이 있으면 이용하지 마세요.</p>
+                        </div>
+                    </div>
+                    <div class="step_item js-reveal">
+                        <div class="step_num">4</div>
+                        <div>
+                            <h3>1인 탑승</h3>
+                            <p>킥보드는 1인용입니다. 두 명 이상 함께 타면 균형을 잃고 큰 사고로 이어질 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="step_item js-reveal">
+                        <div class="step_num">5</div>
+                        <div>
+                            <h3>교통법규 준수</h3>
+                            <p>인도가 아닌 차도에서 주행하고, 신호와 속도를 지키며 안전하게 운전하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_section">
+                <h3 class="sub_section_title">주행 중 이것만은 지켜주세요</h3>
+                <div class="do_dont">
+                    <div class="do_box js-reveal">
+                        <h3>안전한 주행</h3>
+                        <ul>
+                            <li>전조등을 켜고 시야를 확보하기</li>
+                            <li>속도를 줄이고 방어 운전하기</li>
+                            <li>보행자와 충분한 거리 유지하기</li>
+                            <li>야간에는 밝은 옷을 입기</li>
+                        </ul>
+                    </div>
+                    <div class="dont_box js-reveal">
+                        <h3>위험한 주행</h3>
+                        <ul>
+                            <li>이어폰을 끼고 주행하기</li>
+                            <li>휴대전화를 보며 주행하기</li>
+                            <li>음주 상태로 주행하기</li>
+                            <li>인도에서 빠르게 주행하기</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div id="footer_info">
@@ -91,5 +154,6 @@
             </p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

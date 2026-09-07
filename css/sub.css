@@ -1,0 +1,575 @@
+/* ============================================================
+    Kick-Off 서브페이지 공통 스타일 (main.css 토큰 시스템 기반)
+    - 페이지 상단 배너(히어로), 콘텐츠 카드, 표, 폼 등
+    - 모든 색상은 main.css의 CSS 변수 사용 (--primary 등)
+   ============================================================ */
+
+/* ---------- 페이지 상단 배너(히어로) ---------- */
+.sub_hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      1200px 600px at 80% 20%,
+      rgba(13, 148, 136, 0.22),
+      transparent 60%
+    ),
+    linear-gradient(135deg, var(--navy) 0%, #0a2a4a 55%, #0f766e 100%);
+  color: #fff;
+  text-align: center;
+  padding: 96px 24px 80px;
+}
+.sub_hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+  opacity: 0.6;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+}
+.sub_hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sub_hero h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 4.4vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.sub_hero h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 16px auto 0;
+  border-radius: 2px;
+  background: var(--primary-tint);
+  opacity: 0.85;
+}
+.sub_hero p {
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ---------- 콘텐츠 영역 ---------- */
+.sub_container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+}
+
+.sub_section {
+  margin-bottom: 64px;
+}
+.sub_section:last-child {
+  margin-bottom: 0;
+}
+
+.sub_section_title {
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.sub_section_title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 2px;
+  background: var(--primary);
+}
+
+.sub_section_desc {
+  color: var(--body);
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin: 18px 0 30px;
+  max-width: 70ch;
+}
+
+/* ---------- 카드 그리드 ---------- */
+.card_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.info_card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: clamp(22px, 3vw, 32px);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.info_card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+  padding: 1px;
+  background: linear-gradient(135deg, var(--primary-tint), transparent 60%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+  pointer-events: none;
+}
+.info_card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+.info_card:hover::before {
+  opacity: 1;
+}
+
+.info_card .card_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  font-size: 22px;
+  margin-bottom: 18px;
+  transition: transform 0.25s var(--ease);
+}
+.info_card:hover .card_icon {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.info_card h3 {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.info_card p {
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- 번호 단계(이용 방법) ---------- */
+.step_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step_item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: clamp(18px, 2.4vw, 26px) clamp(20px, 2.6vw, 30px);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+.step_item:hover {
+  transform: translateX(4px);
+  border-color: var(--primary-tint);
+  box-shadow: var(--shadow-md);
+}
+
+.step_num {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px -6px rgba(13, 148, 136, 0.55);
+}
+
+.step_item h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.step_item p {
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- 해야 할 일 / 하지 말아야 할 일 ---------- */
+.do_dont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.do_box,
+.dont_box {
+  border-radius: var(--radius-card);
+  padding: clamp(22px, 2.8vw, 30px);
+  border: 1px solid;
+}
+.do_box {
+  background: var(--primary-soft);
+  border-color: var(--primary-tint);
+}
+.dont_box {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.do_box h3 {
+  color: var(--primary-strong);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dont_box h3 {
+  color: #b91c1c;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.do_box ul li,
+.dont_box ul li {
+  padding: 8px 0;
+  line-height: 1.6;
+  font-size: 15px;
+  color: var(--ink);
+}
+.do_box ul li::before {
+  content: "✓";
+  color: var(--primary-strong);
+  font-weight: 800;
+  margin-right: 8px;
+}
+.dont_box ul li::before {
+  content: "✕";
+  color: #b91c1c;
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+/* ---------- 게시판/공지 테이블 ---------- */
+.board_table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  font-size: 15px;
+}
+.board_table th,
+.board_table td {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--body);
+}
+.board_table tr:last-child td {
+  border-bottom: none;
+}
+.board_table thead th {
+  background: var(--primary-soft);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--primary-tint);
+}
+.board_table tbody tr {
+  transition: background 0.15s var(--ease);
+}
+.board_table tbody tr:hover {
+  background: var(--bg-soft);
+}
+.board_table td.td_title {
+  text-align: left;
+  color: var(--ink);
+  font-weight: 500;
+}
+.board_table td.td_title a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  transition: color 0.15s var(--ease);
+}
+.board_table td.td_title a:hover {
+  color: var(--primary-strong);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-right: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- FAQ ---------- */
+.faq_item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+.faq_item.is-open {
+  border-color: var(--primary-tint);
+  box-shadow: var(--shadow-md);
+}
+
+.faq_q {
+  padding: 20px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: transparent;
+  transition: background 0.15s var(--ease);
+  user-select: none;
+}
+.faq_q:hover {
+  background: var(--bg-soft);
+}
+.faq_q .q_mark {
+  color: var(--primary-strong);
+  margin-right: 10px;
+  font-weight: 800;
+}
+.faq_q .q_toggle {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  transition:
+    transform 0.25s var(--ease),
+    background 0.2s var(--ease);
+  line-height: 1;
+}
+.faq_item.is-open .faq_q .q_toggle {
+  transform: rotate(45deg);
+  background: var(--primary);
+  color: #fff;
+}
+
+.faq_a {
+  max-height: 0;
+  overflow: hidden;
+  color: var(--body);
+  line-height: 1.75;
+  font-size: 15px;
+  padding: 0 24px;
+  transition:
+    max-height 0.35s var(--ease),
+    padding 0.25s var(--ease);
+}
+.faq_item.is-open .faq_a {
+  max-height: 600px;
+  padding: 0 24px 22px;
+}
+
+/* ---------- 폼(건의사항 등) ---------- */
+.sub_form {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: clamp(26px, 3vw, 40px);
+  max-width: 760px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-md);
+}
+.sub_form .field {
+  margin-bottom: 22px;
+}
+.sub_form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 14.5px;
+  letter-spacing: -0.005em;
+}
+.sub_form input[type="text"],
+.sub_form input[type="email"],
+.sub_form input[type="tel"],
+.sub_form select,
+.sub_form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14.5px;
+  background-color: var(--bg);
+  font-family: inherit;
+  color: var(--ink);
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+.sub_form input:hover,
+.sub_form select:hover,
+.sub_form textarea:hover {
+  background-color: var(--bg-soft);
+}
+.sub_form input:focus,
+.sub_form select:focus,
+.sub_form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--bg);
+  box-shadow: var(--ring);
+}
+.sub_form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.sub_btn {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15.5px;
+  padding: 16px;
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    background 0.2s var(--ease);
+  box-shadow: 0 10px 24px -10px rgba(13, 148, 136, 0.55);
+}
+.sub_btn:hover {
+  background: var(--primary-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -12px rgba(13, 148, 136, 0.65);
+}
+.sub_btn:active {
+  transform: scale(0.98);
+}
+
+/* ---------- 기타 유틸 ---------- */
+.center {
+  text-align: center;
+}
+.highlight {
+  color: var(--primary-strong);
+  font-weight: 700;
+}
+.warn {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+/* ---------- 반응형 ---------- */
+@media screen and (max-width: 768px) {
+  .sub_hero {
+    padding: 72px 20px 60px;
+  }
+  .sub_container {
+    padding: 48px 20px 72px;
+  }
+  .do_dont {
+    grid-template-columns: 1fr;
+  }
+  .sub_form {
+    padding: 24px;
+  }
+  .board_table th,
+  .board_table td {
+    padding: 12px 10px;
+    font-size: 13.5px;
+  }
+  .step_item {
+    gap: 14px;
+  }
+  .faq_q {
+    padding: 18px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (hover: none) {
+  .info_card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+    border-color: var(--border);
+  }
+  .info_card:hover::before {
+    opacity: 0;
+  }
+  .step_item:hover {
+    transform: none;
+  }
+}

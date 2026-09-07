@@ -51,9 +51,12 @@
         <div id="site_map">
             <a href="#">사이트맵</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <div id="bt"><!--유틸리티 메뉴 부분-->
             <a id='red' href="../html/report.html">신고</a>
-            <a href="#">로그인 / 회원가입</a>
+            <a href="./log_inorup.html">로그인 / 회원가입</a>
             <div class="h_box" id="h_box4">
                 <form>
                     <input type="search" id="sear">
@@ -63,36 +66,203 @@
         </div>
     </header>
     <main>
-        <section id="main_img">
-            <div id="overlay">        
-                <h1 id="main-title">
+        <section id="main_img" class="hero-kenburns">
+            <div id="overlay">
+                <h1 id="main-title" class="js-reveal">
                     안전한 보행길,<br>
                     깨끗한 우리 동네.
                 </h1>
-                <p id="main-desc">
+                <p id="main-desc" class="js-reveal">
                     올바른 PM 문화, 우리가 함께 만듭니다.
                 </p>
-                <div id="btn-group">
+                <div id="btn-group" class="js-reveal">
                     <a href="../html/report.html" id="green">지금 제보하기</a>
-                    <a href="#" id="white">이용 안내</a>
+                    <a href="./sub_guide/user_guide.html" id="white">이용 안내</a>
                 </div>
             </div>
         </section>
+
+        <!-- ============== Kick-Off Cinema: 지쿠(GCOO) 스타일 3D 패럴랙스 scene ============== -->
+        <section id="kickboard_cinema" class="js-reveal" aria-label="킥보드 시네마틱 애니메이션">
+            <!-- 풀-블리드 캔버스 (스크롤 도리-줌) -->
+            <div class="cinema_viewport" id="cinema_viewport">
+                <!-- 깊이감 있는 패럴랙스 레이어 컨테이너 -->
+                <div class="cinema_scene" id="cinema_scene">
+
+                    <!-- Layer 0: 그라데이션 스카이 -->
+                    <div class="px_layer px_sky" data-depth="0.05">
+                        <div class="px_sun"></div>
+                        <div class="px_glow"></div>
+                    </div>
+
+                    <!-- Layer 1: 원경 빌딩 (실루엣) -->
+                    <div class="px_layer px_buildings_far" data-depth="0.15">
+                        <div class="bldg b1"></div>
+                        <div class="bldg b2"></div>
+                        <div class="bldg b3"></div>
+                        <div class="bldg b4"></div>
+                        <div class="bldg b5"></div>
+                        <div class="bldg b6"></div>
+                    </div>
+
+                    <!-- Layer 2: 네온 사인 + 가로등 -->
+                    <div class="px_layer px_mid" data-depth="0.32">
+                        <div class="neon_sign">GCOO<span>ZONE</span></div>
+                        <div class="neon_sign right">SAFE<span>RIDE</span></div>
+                        <div class="lamppost a"><div class="lamp"></div></div>
+                        <div class="lamppost b"><div class="lamp"></div></div>
+                        <div class="lamppost c"><div class="lamp"></div></div>
+                    </div>
+
+                    <!-- Layer 3: 강한 원근의 도로 -->
+                    <div class="px_layer px_road" data-depth="0.5">
+                        <div class="px_road_floor">
+                            <div class="px_lane_left"></div>
+                            <div class="px_lane_right"></div>
+                            <div class="px_center_line"></div>
+                            <div class="px_road_glow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Layer 4: 무대 빛 (vanishing point glow) -->
+                    <div class="px_layer px_vanish" data-depth="0.05">
+                        <div class="px_vanish_glow"></div>
+                    </div>
+
+                    <!-- Layer 5: 킥보드 + 라이더 (가장 가까운 depth) -->
+                    <div class="px_layer px_runner" data-depth="0.9">
+                        <div class="px_speed_lines">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="px_kickboard" id="px_kickboard">
+                            <div class="px_glow_trail"></div>
+                            <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="deckGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#1e293b"/>
+                                        <stop offset="100%" stop-color="#020617"/>
+                                    </linearGradient>
+                                    <linearGradient id="riderGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#14b8a6"/>
+                                        <stop offset="100%" stop-color="#0d9488"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- 그림자 -->
+                                <ellipse cx="120" cy="132" rx="78" ry="6" fill="rgba(0,0,0,.45)"/>
+                                <!-- 데크 -->
+                                <rect x="60" y="98" width="120" height="10" rx="4" fill="url(#deckGrad)"/>
+                                <rect x="60" y="98" width="120" height="3" rx="1.5" fill="#0d9488" opacity=".9"/>
+                                <!-- 스템 -->
+                                <rect x="68" y="60" width="7" height="40" rx="2" fill="#334155"/>
+                                <rect x="68" y="60" width="7" height="3" fill="#0d9488"/>
+                                <!-- 핸들바 -->
+                                <rect x="60" y="54" width="22" height="6" rx="2" fill="#0f172a"/>
+                                <rect x="58" y="48" width="26" height="5" rx="2" fill="#0d9488"/>
+                                <!-- 뒷 서스펜션 -->
+                                <rect x="138" y="92" width="3" height="14" fill="#334155"/>
+                                <!-- 뒷바퀴 -->
+                                <circle class="px_wheel" cx="148" cy="108" r="14" fill="#0a0f1a"/>
+                                <circle class="px_wheel" cx="148" cy="108" r="6" fill="#475569"/>
+                                <circle class="px_wheel" cx="148" cy="108" r="2.5" fill="#94a3b8"/>
+                                <!-- 앞바퀴 -->
+                                <circle class="px_wheel" cx="72" cy="108" r="14" fill="#0a0f1a"/>
+                                <circle class="px_wheel" cx="72" cy="108" r="6" fill="#475569"/>
+                                <circle class="px_wheel" cx="72" cy="108" r="2.5" fill="#94a3b8"/>
+                                <!-- 라이더 -->
+                                <g class="px_rider">
+                                    <!-- 다리 -->
+                                    <rect x="86" y="74" width="7" height="26" rx="2" fill="#0f172a"/>
+                                    <rect x="104" y="74" width="7" height="26" rx="2" fill="#0f172a"/>
+                                    <!-- 발 -->
+                                    <rect x="83" y="98" width="11" height="3" rx="1" fill="#0d9488"/>
+                                    <rect x="103" y="98" width="11" height="3" rx="1" fill="#0d9488"/>
+                                    <!-- 몸통 -->
+                                    <path d="M88 38 Q82 56 88 78 L120 78 Q126 56 120 38 Z" fill="url(#riderGrad)"/>
+                                    <!-- 조끼 라인 -->
+                                    <path d="M94 42 L114 42 L116 74 L92 74 Z" fill="#0f766e"/>
+                                    <!-- 팔 -->
+                                    <rect x="116" y="44" width="7" height="22" rx="2" fill="#0d9488" transform="rotate(-22 119 52)"/>
+                                    <rect x="90" y="44" width="7" height="22" rx="2" fill="#0d9488" transform="rotate(22 93 52)"/>
+                                    <!-- 헬멧 -->
+                                    <circle cx="104" cy="28" r="13" fill="#0a0f1a"/>
+                                    <path d="M92 26 Q104 16 116 26 L116 30 L92 30 Z" fill="#0d9488"/>
+                                    <rect x="93" y="26" width="22" height="4" rx="1.5" fill="#14b8a6" opacity=".75"/>
+                                    <!-- 헬멧 디테일 -->
+                                    <circle cx="108" cy="22" r="2" fill="#14b8a6" opacity=".8"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Layer 6: 후처리 (vignette + grain + lens flare) -->
+                    <div class="px_layer px_post">
+                        <div class="px_vignette"></div>
+                        <div class="px_grain"></div>
+                        <div class="px_lens_flare"></div>
+                    </div>
+
+                    <!-- HUD -->
+                    <div class="px_hud">
+                        <div class="px_hud_row">
+                            <span class="px_dot"></span>
+                            <span class="px_hud_label">LIVE TELEMETRY</span>
+                        </div>
+                        <div class="px_hud_metrics">
+                            <div class="px_metric">
+                                <span class="px_m_label">SPEED</span>
+                                <span class="px_m_value" id="px_speed">0</span>
+                                <span class="px_m_unit">km/h</span>
+                            </div>
+                            <div class="px_metric">
+                                <span class="px_m_label">DIST</span>
+                                <span class="px_m_value" id="px_dist">0</span>
+                                <span class="px_m_unit">m</span>
+                            </div>
+                            <div class="px_metric px_metric_warn">
+                                <span class="px_m_label">MODE</span>
+                                <span class="px_m_value">SPORT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 좌상단 워드마크 -->
+                    <div class="px_brand">
+                        <div class="px_brand_line"></div>
+                        <div class="px_brand_text">
+                            <span class="px_brand_small">RIDE SAFER.</span>
+                            <span class="px_brand_big">KICK<span>·OFF</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 캡션 / CTA -->
+                <div class="px_caption">
+                    <h3 class="px_caption_title">빠른 속도, 더 큰 책임.</h3>
+                    <p class="px_caption_sub">도로 위의 시한폭탄이 되기 전에 — 우리는 멈춰야 합니다.</p>
+                    <div class="px_caption_actions">
+                        <a href="../html/log_inorup.html" class="px_btn px_btn_gray">안전에 가입하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============== /Kick-Off Cinema ============== -->
+
         <section id="main_info">
-            <div class="dv" id="scooter">
+            <div class="dv js-reveal" id="scooter">
                 <div class="image"><img src="../images/kickboard.jpg" alt="kickboard"></div>
                 <div>
                     <p>위에 보이는 전동 스쿠터는<br>미성년자들이 주로 타며,<br> 보통 면허 없이, 헬멧 없이<br> 타는 경우가 대다수이며,<br> 이 킥보드로 인한 사고가 많아<br> <span>'킥라니'</span>라고도 불립니다.</p>
                 </div>
             </div>
-            <div class="dv" id="info">
+            <div class="dv js-reveal" id="info">
                 <div>
                     <p>최근 미성년자들의 무면허·헬멧 <span>전동 킥보드</span><br> 주행이 급증하면서, 도로 위의 시한폭탄이라<br> 불리는 '<span>킥라니</span>' 관련 사고가 심각한 사회적 문제로 떠오르고 있습니다.<br><br><br>
                     하지만 더 큰 문제는 이 위험이 <span>'불법 주차'</span>와 만날 때 발생합니다. 도로변에 빽빽하게 늘어선 불법 주차 차량들은 운전자의 시야를 완전히 가리는 거대한 사각지대를 만듭니다. 이 불법 주차 차량 사이에서 갑자기 튀어나오는 사람이나 전동 킥보드는 운전자가 미처 대처할 수 없어 <span>대형 충돌 사고</span>로 이어지는 가장 치명적인 원인이 되고 있습니다. <br><br><br>
                     본 웹페이지는 이처럼 우리 일상을 위협하는 <br>[<span>위험천만한 킥보드 주행</span>]과 <br>[<span>시야를 가리는 불법 주차</span>]라는 두 가지 핵심 문제를 널리 알리고, 더 이상의 비극적인 사고를 막기 <br>위한 '안전사고 예방' 차원에서 제작되었습니다.</p>
                 </div>
             </div>
-            <div class="dv" id="car">
+            <div class="dv js-reveal" id="car">
                 <div class="image"><img src="../images/parking.jpg" alt="parking"></div>
                 <div>
                     <p>최근에 불법주차 때문에 사고가 나는 경우가 많아졌습니다. 특히 불법주차 사이에서 나오는 사람이나 킥보드 같은 경우에 오는 차량들은 볼 수 없어 사고가 제일 많이 납니다. 이 때문에 전동 킥보드 사고도 더 많아지고 있습니다.</p>
@@ -119,5 +289,6 @@
             </p>
         </div>
     </footer>
+    <script src="../js/main.js"></script>
 </body>
 </html>
